@@ -31,14 +31,11 @@ pip install flask pillow
 
 ## Usage
 
-1. Start the server:
-
-   Run `totem_generator.exe`
-
-
+1. Run `totem_generator_standalone.html` (RECOMMENDED)
+   
       or
 
-
+   Start the server:
    ```bash
    python totem_generator.py
    ```
