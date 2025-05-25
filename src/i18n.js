@@ -46,9 +46,8 @@ function setLang(lang) {
   // Update fold button text
   const foldBtn = document.getElementById('foldMetaBtn');
   if (foldBtn) {
-    const metaFields = document.getElementById('metaFields');
-    const folded = metaFields && metaFields.style.display === 'none';
-    foldBtn.textContent = folded ? t.foldMetaShow : t.foldMetaHide;
+    // Use global folded state
+    foldBtn.textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
   }
   // Update all crop buttons if present
   document.querySelectorAll('button[id^="cropBtn"]').forEach(btn => {
