@@ -3,16 +3,15 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 
 Click the download button to download a `.mcpack` file for easy import into Minecraft.
 
-<img src="https://github.com/user-attachments/assets/eac90c96-9697-4053-aab6-872ae6150ede" alt="ScreenShot" width="500"/>
-
-右上角切换中文
-
-<img src="https://github.com/user-attachments/assets/36b0f935-9dad-4862-a4d0-7f146d89fdc8" alt="ScreenShot" width="500"/>
+<img src="https://github.com/user-attachments/assets/36b0f935-9dad-4862-a4d0-7f146d89fdc8" alt="ScreenShot" width="800"/>
 
 ## Advantages
+- **支持中文：** 右上角切换中文(虽然感觉没有中文应该也能看得懂)
+  <img src="https://github.com/user-attachments/assets/eac90c96-9697-4053-aab6-872ae6150ede" alt="ScreenShot" width="500"/>
+
 - **It is a website:** Just run the Python server and open your browser.
 - **User-friendly:** Intuitive interface with a simple cropping tool.
-- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? It does not matter. 
+- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? It does not matter.
 
 ## Introduction
 - **totem_generator.py**  
