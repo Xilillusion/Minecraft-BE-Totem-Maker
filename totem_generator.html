@@ -654,13 +654,17 @@
         body: formData
       });
       if (response.ok) {
-        const data = await response.json();
+        const blob = await response.blob();
         const a = document.createElement('a');
-        a.href = data.download_url;
+        const url = window.URL.createObjectURL(blob);
+        a.href = url;
         a.download = safePackName + '.mcpack';
         document.body.appendChild(a);
         a.click();
-        document.body.removeChild(a);
+        setTimeout(() => {
+          window.URL.revokeObjectURL(url);
+          document.body.removeChild(a);
+        }, 100);
       } else {
         alert('Upload failed');
       }
