@@ -15,10 +15,12 @@ Click the download button to download a `.mcpack` file for easy import into Mine
 - **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? We handle these for you.
 
 ## Introduction
-- **totem_generator.py**  
+- **totem_generator.py**
   Flask backend. Handles file uploads, image processing and packaging.
-- **totem_generator.html**  
+- **totem_generator.html**
   HTML frontend. Provides the UI for uploading, cropping and downloading.
+- **totem_generator_standalone.html**
+  Rewrite Python into JS. *No backend is needed*
 
 ## Prerequisites
 - **Pillow** (for image processing)
