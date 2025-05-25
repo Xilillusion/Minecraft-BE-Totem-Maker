@@ -25,7 +25,7 @@ Click the download button to download a `.mcpack` file for easy import into Mine
 3. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
 
 ## Introduction
-- **index.html**
+- **index.html** main file
 - ****
 - ****
 - ****
