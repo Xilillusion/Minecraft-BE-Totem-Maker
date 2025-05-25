@@ -6,7 +6,8 @@ Click the download button to download a `.mcpack` file for easy import into Mine
 <img src="https://github.com/user-attachments/assets/36b0f935-9dad-4862-a4d0-7f146d89fdc8" alt="ScreenShot" width="800"/>
 
 ## Advantages
-- **支持中文：** 右上角切换中文(虽然感觉没有中文应该也能看得懂)
+- **支持中文：** 右上角切换中文 (虽然感觉没有中文应该也能看得懂)
+
   <img src="https://github.com/user-attachments/assets/eac90c96-9697-4053-aab6-872ae6150ede" alt="ScreenShot" width="500"/>
 
 - **It is a website:** Just run the Python server and open your browser.
