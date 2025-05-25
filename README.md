@@ -12,7 +12,7 @@ Click the download button to download a `.mcpack` file for easy import into Mine
 
 - **It is just a web:** Just run the Python server and open your browser. Also able to put this on your website
 - **User-friendly:** Intuitive interface with a simple cropping tool.
-- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? It does not matter.
+- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? We handle these for you.
 
 ## Introduction
 - **totem_generator.py**  
