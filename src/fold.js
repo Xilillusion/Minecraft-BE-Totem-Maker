@@ -6,12 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
   foldBtn.addEventListener('click', function() {
     window.folded = !window.folded;
     metaFields.style.display = window.folded ? 'none' : '';
-    // Use translation if available
-    if (typeof translations !== "undefined" && typeof currentLang !== "undefined") {
-      const t = translations[currentLang] || translations.en;
-      foldBtn.textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
-    } else {
-      foldBtn.textContent = window.folded ? 'Show Pack Info ▼' : 'Hide Pack Info ▲';
+    // Always update button text via setLang to ensure correct language
+    if (typeof setLang === "function" && typeof currentLang !== "undefined") {
+      setLang(currentLang);
     }
   });
 });
