@@ -5,6 +5,10 @@ Click the download button to download a `.mcpack` file for easy import into Mine
 
 <img src="https://github.com/user-attachments/assets/eac90c96-9697-4053-aab6-872ae6150ede" alt="ScreenShot" width="500"/>
 
+右上角切换中文
+
+<img src="https://github.com/user-attachments/assets/36b0f935-9dad-4862-a4d0-7f146d89fdc8" alt="ScreenShot" width="500"/>
+
 ## Advantages
 - **It is a website:** Just run the Python server and open your browser.
 - **User-friendly:** Intuitive interface with a simple cropping tool.
