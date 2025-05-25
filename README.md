@@ -44,8 +44,8 @@ pip install flask pillow
    ```bash
    python totem_generator.py
    ```
-3. Open your browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
-4. Upload your image and (optionally) a pack icon.
-5. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
+   Open your browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+2. Upload your image and (optionally) a pack icon.
+3. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
 
 ---
