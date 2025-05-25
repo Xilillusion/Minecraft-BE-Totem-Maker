@@ -696,12 +696,16 @@
       }
       zip.file("textures/items/totem.png", totemPngBlob);
 
-      // Icon (optional)
+      // Icon (optional, fallback to totem if not provided)
       const iconInput = document.getElementById('iconInput');
+      let iconPngBlob = null;
       if (iconInput.files && iconInput.files[0]) {
-        const iconPngBlob = await getImagePngBlobFromInput('iconInput');
-        zip.file("pack_icon.png", iconPngBlob);
+        iconPngBlob = await getImagePngBlobFromInput('iconInput');
+      } else {
+        // Use totem image as icon if icon not provided
+        iconPngBlob = totemPngBlob;
       }
+      zip.file("pack_icon.png", iconPngBlob);
 
       // manifest.json
       const manifest = {
