@@ -29,7 +29,7 @@ pip install flask pillow
    Run `totem_generator.exe`
 
 
-   or
+      or
 
 
    ```bash
