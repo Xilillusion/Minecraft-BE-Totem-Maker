@@ -38,7 +38,7 @@ pip install flask pillow
 
 1. Run `totem_generator_standalone.html` (RECOMMENDED)
    
-        or
+   OR
 
    Start the server:
    ```bash
