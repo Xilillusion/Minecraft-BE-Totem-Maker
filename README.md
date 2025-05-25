@@ -10,7 +10,7 @@ Click the download button to download a `.mcpack` file for easy import into Mine
 
   <img src="https://github.com/user-attachments/assets/eac90c96-9697-4053-aab6-872ae6150ede" alt="ScreenShot" width="500"/>
 
-- **It is a website:** Just run the Python server and open your browser.
+- **It is just a web:** Just run the Python server and open your browser. Also able to put this on your website
 - **User-friendly:** Intuitive interface with a simple cropping tool.
 - **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? It does not matter.
 
