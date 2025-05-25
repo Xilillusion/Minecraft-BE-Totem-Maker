@@ -3,7 +3,7 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 
 Click the download button to download a `.mcpack` file for easy import into Minecraft.
 
-<img src="https://github.com/user-attachments/assets/36b0f935-9dad-4862-a4d0-7f146d89fdc8" alt="ScreenShot" width="800"/>
+<img src="https://github.com/user-attachments/assets/5c6fdbb7-ed12-4019-abc2-6acf36eead37" alt="ScreenShot" width="800"/>
 
 ## Advantages
 - **支持中文：** 右上角切换中文 (虽然感觉没有中文应该也能看得懂)
