@@ -1,7 +1,7 @@
 # Minecraft BE Totem Texture Pack Maker
 A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying texture packs. Users can upload their own images and (optionally) enter pack information.
 
-<img src="https://github.com/user-attachments/assets/5c6fdbb7-ed12-4019-abc2-6acf36eead37" alt="ScreenShot" width="800"/>
+<img src="https://github.com/user-attachments/assets/bd89258a-2e50-46d1-8989-a0aa57b0e38f" alt="ScreenShot" width="800"/>
 
 ## Advantages
 - **支持中文：** 右上角切换中文 (虽然感觉没有中文应该也能看得懂)
