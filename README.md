@@ -1,19 +1,26 @@
 # Minecraft BE Totem Texture Pack Maker
-
-## Introduction
 A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying texture packs. Users can upload their own images and (optionally) a pack icon.
+
 Click the download button to download a `.mcpack` file for easy import into Minecraft.
 
-## Advantages
-- **It is a web** Just run the Python server and open your browser.
-- **User-friendly:** Intuitive interface with a simple cropping tool.
-- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? It does not matter. 
+<img src="https://github.com/user-attachments/assets/5c6fdbb7-ed12-4019-abc2-6acf36eead37" alt="ScreenShot" width="800"/>
 
-## Overview
-- **totem_generator.py**  
+## Advantages
+- **支持中文：** 右上角切换中文 (虽然感觉没有中文应该也能看得懂)
+
+  <img src="https://github.com/user-attachments/assets/eac90c96-9697-4053-aab6-872ae6150ede" alt="ScreenShot" width="500"/>
+
+- **It is just a web:** Just run the Python server and open your browser. Also able to put this on your website
+- **User-friendly:** Intuitive interface with a simple cropping tool.
+- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? We handle these for you.
+
+## Introduction
+- **totem_generator.py**
   Flask backend. Handles file uploads, image processing and packaging.
-- **totem_generator.html**  
+- **totem_generator.html**
   HTML frontend. Provides the UI for uploading, cropping and downloading.
+- **totem_generator_standalone.html**
+  Rewrite Python into JS. *No backend is needed*
 
 ## Prerequisites
 - **Pillow** (for image processing)
@@ -26,18 +33,16 @@ pip install flask pillow
 
 ## Usage
 
-1. Start the server:
-   Run `totem_generator.exe`
+1. Run `totem_generator_standalone.html` (RECOMMENDED)
+   
+      or
 
-
-   or
-
-
+   Start the server:
    ```bash
    python totem_generator.py
    ```
-2. Open your browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
-3. Upload your image and (optionally) a pack icon.
-4. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
+3. Open your browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+4. Upload your image and (optionally) a pack icon.
+5. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
 
 ---
