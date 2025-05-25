@@ -16,10 +16,13 @@ Click the download button to download a `.mcpack` file for easy import into Mine
 
 ## Introduction
 - **totem_generator.py**
+
   Flask backend. Handles file uploads, image processing and packaging.
 - **totem_generator.html**
+
   HTML frontend. Provides the UI for uploading, cropping and downloading.
 - **totem_generator_standalone.html** = **index.html**
+
   Rewrite Python into JS. *No backend is needed*
 
 ## Prerequisites
