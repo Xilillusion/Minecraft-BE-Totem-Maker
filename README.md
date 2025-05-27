@@ -23,6 +23,17 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 3. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
 
 ## Introduction
+index.html
+src\
+├── background.js
+├── cropper.js
+├── fold.js
+├── i18n.js
+│   ├── mcpack.js
+│   ├── preview.js
+│   └── totem.js
+├── img  **background images**
+└── old  **abandoned scripts**
 - **index.html** main file
 - **background.js** Background images display
 - **cropper.js** Cropper tool and its related functionalities
