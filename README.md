@@ -37,10 +37,5 @@ src\
 └── old                Abandoned scripts
 ```
 
-## Prerequisites
-- Internet
-
-Install dependencies with:
-```bash
-Money to pay your Internet operator
-```
+## Reference
+- JSZip: http://stuartk.com/jszip 
