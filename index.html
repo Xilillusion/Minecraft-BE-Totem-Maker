@@ -154,6 +154,112 @@
       background: linear-gradient(90deg, #005fa3 0%, #0096c7 100%);
       box-shadow: 0 4px 16px rgba(0,120,215,0.13);
     }
+    .lang-switcher-btn {
+      font-size:1em;
+      padding:4px 18px;
+      border-radius:20px;
+      cursor:pointer;
+      background: linear-gradient(90deg, #38bdf8 0%, #0078d7 100%);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,120,215,0.10);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+      width: 90px;
+      min-width: 90px;
+      max-width: 90px;
+      height: 36px;
+      min-height: 36px;
+      max-height: 36px;
+      text-align: center;
+      margin-right: 8px;
+    }
+    .lang-switcher-btn:hover {
+      background: linear-gradient(90deg,#0096c7 0%,#38bdf8 100%);
+      transform: scale(1.06);
+    }
+    .mode-switch-bar {
+      display:flex;
+      justify-content:center;
+      gap:0;
+      margin:10px 0 22px 0;
+      width:100%;
+    }
+    .mode-btn {
+      flex:1 1 0;
+      padding:8px 0 12px 0;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      font-size:1.15em;
+      transition:background 0.2s;
+      height:40px;
+      background:#e0e0e0;
+      color:#0078d7;
+    }
+    .mode-btn-active {
+      background:#0078d7;
+      color:#fff;
+      border-radius:8px 0 0 8px;
+    }
+    .mode-btn:last-child {
+      border-radius:0 8px 8px 0;
+    }
+    .fold-meta-btn {
+      margin-bottom:12px;
+      width:100%;
+      border-radius:6px;
+      background:#e0f2fe;
+      color:#0078d7;
+      font-weight:600;
+      padding:7px 0;
+      cursor:pointer;
+      border:none;
+    }
+    .meta-fields {
+      border:2px solid #b6e0fe;
+      border-radius:10px;
+      padding:18px 14px 8px 14px;
+      margin-bottom:18px;
+      background:rgba(248,252,255,0.3);
+    }
+    .custom-popup {
+      display:none;
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      background:rgba(255,255,255,0.98);
+      border:2px solid #38bdf8;
+      border-radius:12px;
+      box-shadow:0 4px 32px rgba(0,0,0,0.18);
+      padding:28px 32px 18px 32px;
+      z-index:9999;
+      text-align:center;
+      font-size:1.13em;
+      color:#0078d7;
+    }
+    .popup-icon {
+      font-size:2.2em;
+      margin-bottom:10px;
+    }
+    .popup-close-btn {
+      margin-top:18px;
+      padding:7px 28px;
+      border-radius:6px;
+      background:linear-gradient(90deg,#38bdf8 0%,#0078d7 100%);
+      color:#fff;
+      border:none;
+      font-weight:600;
+      font-size:1em;
+      cursor:pointer;
+      box-shadow:0 2px 8px rgba(0,120,215,0.10);
+      transition:background 0.2s;
+    }
+    .popup-close-btn:hover {
+      background:linear-gradient(90deg,#005fa3 0%,#0096c7 100%);
+    }
     @media (max-width: 500px) {
       .container {
         max-width: 98vw;
@@ -168,51 +274,33 @@
 <body>
   <div class="bg-totem"></div>
   <div style="position:absolute;top:12px;right:32px;z-index:2;">
-    <button id="langSwitcher" style="
-      font-size:1em;
-      padding:4px 18px;
-      border-radius:20px;
-      cursor:pointer;
-      background: linear-gradient(90deg, #38bdf8 0%, #0078d7 100%);
-      color: #fff;
-      border: none;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px rgba(0,120,215,0.10);
-      transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-      width: 90px; /* Uniform width */
-      min-width: 90px;
-      max-width: 90px;
-      height: 36px; /* Fixed height */
-      min-height: 36px;
-      max-height: 36px;
-      text-align: center;
-      margin-right: 8px;
-      "
-      onmouseover="this.style.background='linear-gradient(90deg,#0096c7 0%,#38bdf8 100%)';this.style.transform='scale(1.06)';"
-      onmouseout="this.style.background='linear-gradient(90deg,#38bdf8 0%,#0078d7 100%)';this.style.transform='scale(1)';">
+    <button id="langSwitcher" class="lang-switcher-btn">
       中文
     </button>
   </div>
-  <div class="container" style="background:rgba(255,255,255,0.80);">
-    <h1><b>Totem of Undying Texture Pack Maker</b></h1>
+  <div class="container">
+    <h1></h1>
     <div class="subtitle"></div>
     <div class="subtitle secondary"></div>
+    <!-- Mode Switch Bar -->
+    <div id="modeSwitchBar" class="mode-switch-bar">
+      <button type="button" id="mode2D" class="mode-btn mode-btn-active"></button>
+      <button type="button" id="mode3D" class="mode-btn"></button>
+    </div>
+    <!-- Upload Form -->
     <form id="uploadForm">
-      <button type="button" id="foldMetaBtn" style="margin-bottom:12px;width:100%;border-radius:6px;background:#e0f2fe;color:#0078d7;font-weight:600;padding:7px 0;cursor:pointer;border:none;">
-        Hide Pack Info ▲
-      </button>
-      <div id="metaFields" style="border:2px solid #b6e0fe; border-radius:10px; padding:18px 14px 8px 14px; margin-bottom:18px; background:rgba(248,252,255,0.3);">
+      <button type="button" id="foldMetaBtn" class="fold-meta-btn"></button>
+      <div id="metaFields" class="meta-fields">
         <div class="input-row">
-          <label for="packName">Pack Name:</label>
+          <label for="packName"></label>
           <input type="text" id="packName" name="packName" value="Xilillusion's Totem" required>
         </div>
         <div class="input-row">
-          <label for="packDescription">Pack Description:</label>
+          <label for="packDescription"></label>
           <input type="text" id="packDescription" name="packDescription" placeholder="Enter a description" value="Generated by §l§aXilillusion§f's Totem Maker">
         </div>
         <div class="input-row">
-          <span class="section-label">Pack Icon:</span>
+          <span class="section-label"></span>
           <div class="preview-row">
             <input type="file" name="icon" accept="image/*" id="iconInput">
             <img id="iconPreview">
@@ -220,24 +308,41 @@
           <div id="iconCropContainer" class="crop-container"></div>
         </div>
       </div>
-      <div class="input-row">
-        <span class="section-label">Totem Image (Required):</span>
+      <div class="input-row" id="totemInputRow">
+        <span class="section-label" id="imageLabel"></span>
         <div class="preview-row">
           <input type="file" name="file" accept="image/*" required id="imageInput">
           <img id="imagePreview">
         </div>
         <div id="imageCropContainer" class="crop-container"></div>
       </div>
-      <input type="submit" value="Download">
+      <div class="input-row" id="skinInputRow">
+        <span class="section-label" id="skinLabel"></span>
+        <div class="preview-row">
+          <input type="file" name="skinfile" accept="image/*" required id="skinInput">
+          <img id="skinPreview">
+        </div>
+      </div>
+      <input type="submit" value="Download" id="downloadBtn">
     </form>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <!-- Popup menu layout -->
+  <div id="customPopup" class="custom-popup">
+    <div class="popup-icon">⚠️</div>
+    <div id="popupMsg"></div>
+    <button id="popupCloseBtn" class="popup-close-btn">OK</button>
+  </div>
+  <!-- Scripts -->
+  <script id="packScript"></script>
+  <script src="src/jszip.js"></script>
   <script src="src/background.js"></script>
+  <script src="src/totem.js"></script>
+  <script src="src/i18n.js"></script>
+  <script src="src/fold.js"></script>
   <script src="src/cropper.js"></script>
   <script src="src/preview.js"></script>
-  <script src="src/i18n.js"></script>
-  <script src="src/mcpack.js"></script>
-  <script src="src/fold.js"></script>
-  <script src="src/totem.js"></script>
+  <script src="src/switch.js"></script>
+  <script src="src/uuid.js"></script>
+  <script src="src/popup.js"></script>
 </body>
 </html>

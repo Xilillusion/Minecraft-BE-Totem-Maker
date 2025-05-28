@@ -8,37 +8,46 @@ const translations = {
     packName: "Pack Name:",
     packDescription: "Pack Description:",
     totemImage: "Totem Image (Required):",
+    skinImage: "Skin Image (Required, 128x128 or 64x64):",
     packIcon: "Pack Icon:",
     download: "Download",
     confirm: "Crop",
     foldMetaShow: "Show Pack Info ▼",
-    foldMetaHide: "Hide Pack Info ▲"
+    foldMetaHide: "Hide Pack Info ▲",
+    mode2D: "2D Image",
+    mode3D: "3D Player Skin",
+    skinSizeError: "Skin image must be 128x128 or 64x64 pixels. Please re-upload."
   },
   zh: {
     langBtn: "English",
     title: "自定义不死图腾<br>生成器",
     madeBy: "作者",
-    uploadTip: "上传贴图和材质包信息（可选），生成基岩版不死图腾材质包。",
+    uploadTip: "上传图片/玩家皮肤和材质包信息（可选），生成基岩版不死图腾材质包。",
     packName: "材质包名称：",
     packDescription: "材质包描述：",
-    totemImage: "图腾贴图（必填）：",
+    totemImage: "上传贴图（必填）：",
+    skinImage: "玩家皮肤（必填，128x128或64x64）：",
     packIcon: "材质包图标：",
     download: "下载",
     confirm: "裁剪",
     foldMetaShow: "显示材质包信息 ▼",
-    foldMetaHide: "隐藏材质包信息 ▲"
+    foldMetaHide: "隐藏材质包信息 ▲",
+    mode2D: "2D图片",
+    mode3D: "3D玩家皮肤",
+    skinSizeError: "皮肤图片必须为128x128或64x64像素，请重新上传。"
   }
 };
 
 let currentLang = "en";
 function setLang(lang) {
   currentLang = lang;
+  window.currentLang = lang; // Ensure global currentLang is updated
   const t = translations[lang] || translations.en;
-  document.querySelector('h1').innerHTML = t.title; // Use innerHTML for <br>
+  document.querySelector('h1').innerHTML = t.title;
   // Update subtitle with GitHub icon/link
   document.querySelector('.subtitle').innerHTML =
-    `${t.madeBy} <a href="https://github.com/Xilillusion" target="_blank" style="color:inherit;text-decoration:underline;"><b>Xilillusion</b></a>` +
-    `<a href="https://github.com/Xilillusion/Minecraft-BE-Totem-Maker" target="_blank" style="vertical-align:text-bottom;margin-left:4px;display:inline-block;">` +
+    `${t.madeBy} <a href="https://github.com/Xilillusion/Minecraft-BE-Totem-Maker" target="_blank" style="color:inherit;text-decoration:underline;"><b>Xilillusion</b></a>` +
+    `<a href="https://github.com/Xilillusion" target="_blank" style="vertical-align:text-bottom;margin-left:4px;display:inline-block;">` +
     `<svg height="20" width="20" viewBox="0 0 16 16" fill="#24292f" style="vertical-align:text-bottom;">` +
     `<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
       0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
@@ -53,6 +62,9 @@ function setLang(lang) {
   document.querySelector('label[for="packDescription"]').textContent = t.packDescription;
   document.querySelectorAll('.section-label')[0].textContent = t.packIcon;
   document.querySelectorAll('.section-label')[1].textContent = t.totemImage;
+  // Add for skin label (3D mode)
+  const skinLabel = document.getElementById('skinLabel');
+  if (skinLabel) skinLabel.textContent = t.skinImage;
   document.querySelector('input[type="submit"]').value = t.download;
   document.getElementById('langSwitcher').textContent = t.langBtn;
   // Update fold button text
@@ -65,6 +77,11 @@ function setLang(lang) {
   document.querySelectorAll('button[id^="cropBtn"]').forEach(btn => {
     btn.textContent = t.confirm;
   });
+  // Update mode switch buttons
+  const mode2DBtn = document.getElementById('mode2D');
+  const mode3DBtn = document.getElementById('mode3D');
+  if (mode2DBtn) mode2DBtn.textContent = t.mode2D;
+  if (mode3DBtn) mode3DBtn.textContent = t.mode3D;
 }
 
 document.getElementById('langSwitcher').addEventListener('click', function() {
@@ -76,3 +93,7 @@ window.addEventListener('DOMContentLoaded', function() {
   let lang = navigator.language.startsWith('zh') ? 'zh' : 'en';
   setLang(lang);
 });
+
+// Expose translations and currentLang globally for popup translation
+window.translations = translations;
+window.currentLang = currentLang;
