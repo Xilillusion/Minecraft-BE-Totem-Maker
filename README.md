@@ -1,4 +1,4 @@
-# Minecraft BE Totem Texture Pack Maker
+# Minecraft BE Totem Generator
 A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying texture packs. Users can upload their own images and (optionally) enter pack information.
 
 <img src="https://github.com/user-attachments/assets/0a1680bb-7063-49eb-b661-2eda316420e9" alt="ScreenShot" width="800"/>
@@ -23,19 +23,19 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 3. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
 
 ## Introduction
-- **index.html** main file
-- **background.js** Background images display
-- **cropper.js** Cropper tool and its related functionalities
-- **fold.js** Function to hide and show the pack info
-- **i18n.js** English and Chineses Translation
-- **mcpack.js** Pack the images and info into .mcpack file
-- **preview.js** Preview of the uploaded images
-- **totem.js** Animation of the big totem in the background
-
-## Prerequisites
-- Internet
-
-Install dependencies with:
-```bash
-Money to pay your Internet operator
+```plaintext
+index.html
+src\
+│   ├── background.js  Background images display
+│   ├── cropper.js     Cropper tool and its related functionalities
+│   ├── fold.js        Function to hide and show the pack info
+│   ├── i18n.js        English and Chineses Translation
+│   ├── mcpack.js      Pack the images and info into .mcpack file
+│   ├── preview.js     Preview of the uploaded images
+│   └── totem.js       Animation of the big totem in the background
+├── img                Background images
+└── old                Abandoned scripts
 ```
+
+## Reference
+- JSZip: http://stuartk.com/jszip 
