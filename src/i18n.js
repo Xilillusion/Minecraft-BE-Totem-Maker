@@ -11,6 +11,7 @@ const translations = {
     skinImage: "Skin Image (Required, 64x64, 128x128 in schedule):",
     packIcon: "Pack Icon:",
     download: "Download",
+    download3D: "Download", // 3D mode download button
     confirm: "Crop",
     foldMetaShow: "Show Pack Info ▼",
     foldMetaHide: "Hide Pack Info ▲",
@@ -33,6 +34,7 @@ const translations = {
     skinImage: "玩家皮肤（必填，64x64，128x128尚未完成）：",
     packIcon: "材质包图标：",
     download: "下载",
+    download3D: "下载", // 3D mode download button
     confirm: "裁剪",
     foldMetaShow: "显示材质包信息 ▼",
     foldMetaHide: "隐藏材质包信息 ▲",
@@ -75,6 +77,9 @@ function setLang(lang) {
   if (skinLabel) skinLabel.textContent = t.skinImage;
   document.querySelector('input[type="submit"]').value = t.download;
   document.getElementById('langSwitcher').textContent = t.langBtn;
+  // Set 3D download button text
+  const downloadBtn3D = document.getElementById('downloadBtn3D');
+  if (downloadBtn3D) downloadBtn3D.textContent = t.download;
   // Arm type switch translation
   const armTypeLabel = document.getElementById('armTypeLabel');
   const armTypeNormalLabel = document.getElementById('armTypeNormalLabel');
