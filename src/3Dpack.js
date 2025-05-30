@@ -16,6 +16,9 @@ async function handle3DPackSubmit(e) {
     showPopup("noTotemImage");
     return;
   }
+  // Get width and height of totemPngBlob
+  const totemImage = await createImageBitmap(totemPngBlob);
+  const imageSize = totemImageBitmap.width;
 
   // ./icon.png
   const iconInput = document.getElementById('iconInput');
@@ -24,8 +27,7 @@ async function handle3DPackSubmit(e) {
     iconPngBlob = await getImagePngBlobFromInput('iconInput');
   } else {
     // Use the player head front view as icon if not provided
-    const totemImage = await createImageBitmap(totemPngBlob);
-    const size = 8;
+    const size = imageSize / 8;
     const canvas = document.createElement('canvas');
     canvas.width = size;
     canvas.height = size;
