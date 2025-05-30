@@ -1,32 +1,4 @@
 // 2D .mcpack generation
-async function imageFileToPngBlob(file) {
-  // Converts any image file to PNG Blob, preserving transparency if possible
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = function() {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext('2d');
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, 0, 0);
-      canvas.toBlob(blob => resolve(blob), 'image/png');
-    };
-    img.onerror = reject;
-    img.src = URL.createObjectURL(file);
-  });
-}
-
-async function getImagePngBlobFromInput(inputId) {
-  // Returns PNG Blob for the file input (after cropping if applied)
-  const input = document.getElementById(inputId);
-  if (!input.files || !input.files[0]) return null;
-  const file = input.files[0];
-  // If file is already PNG, just use it; else convert
-  if (file.type === "image/png") return file;
-  return await imageFileToPngBlob(file);
-}
-
 async function handle2DPackSubmit(e) {
   e.preventDefault();
   const packName = document.getElementById('packName').value.trim() || "Xilillusion's Totem";
@@ -41,7 +13,7 @@ async function handle2DPackSubmit(e) {
   // Totem image (required)
   const totemPngBlob = await getImagePngBlobFromInput('imageInput');
   if (!totemPngBlob) {
-    alert("No totem image selected.");
+    showPopup("noTotemImage");
     return;
   }
   zip.file("textures/items/totem.png", totemPngBlob);

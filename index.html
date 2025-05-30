@@ -113,8 +113,10 @@
       margin-bottom: 0px;
     }
     .preview-row img {
-      max-width: 120px;
-      max-height: 120px;
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 6px;
       border: 1.5px solid #e0e0e0;
       background: #f4f7fa;
@@ -260,6 +262,52 @@
     .popup-close-btn:hover {
       background:linear-gradient(90deg,#005fa3 0%,#0096c7 100%);
     }
+    .arm-type-row-flex {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 0;
+    }
+    .arm-type-row-flex .section-label {
+      margin-bottom: 0;
+      min-width: 72px;
+      flex-shrink: 0;
+    }
+    .arm-type-switch {
+      display: flex;
+      background: #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 210px;
+      margin: 0;
+      box-shadow: 0 1px 4px rgba(0,120,215,0.06);
+    }
+    .arm-type-switch input[type="radio"] {
+      display: none;
+    }
+    .arm-type-btn {
+      flex: 1 1 0;
+      padding: 4px 0 6px 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.08em;
+      color: #0078d7;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      border: none;
+      user-select: none;
+    }
+    .arm-type-switch input[type="radio"]:checked + .arm-type-btn {
+      background: linear-gradient(90deg, #0078d7 0%, #38bdf8 100%);
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,120,215,0.10);
+      z-index: 1;
+    }
+    .arm-type-btn:not(:first-child) {
+      border-left: 1.5px solid #c0e0f8;
+    }
     @media (max-width: 500px) {
       .container {
         max-width: 98vw;
@@ -267,6 +315,10 @@
       }
       h1 {
         font-size: 1.3em;
+      }
+      .arm-type-switch {
+        width: 100%;
+        min-width: 0;
       }
     }
   </style>
@@ -323,7 +375,20 @@
           <img id="skinPreview">
         </div>
       </div>
+      <!-- Arm type switch for 3D mode -->
+      <div class="input-row" id="armTypeRow" style="display:none;">
+        <div class="arm-type-row-flex">
+          <span class="section-label" id="armTypeLabel" style="margin-right:auto;"></span>
+          <div class="arm-type-switch" style="margin-left:auto;">
+            <input type="radio" name="armType" value="normal" id="armTypeNormal" checked>
+            <label for="armTypeNormal" class="arm-type-btn" id="armTypeNormalLabel"></label>
+            <input type="radio" name="armType" value="slim" id="armTypeSlim">
+            <label for="armTypeSlim" class="arm-type-btn" id="armTypeSlimLabel"></label>
+          </div>
+        </div>
+      </div>
       <input type="submit" value="Download" id="downloadBtn">
+      <button type="button" id="downloadBtn3D" style="display:none;width:100%;margin-top:12px;padding:12px 0;font-size:1.08em;font-weight:600;border-radius:6px;background:linear-gradient(90deg,#0078d7 0%,#00b4d8 100%);color:#fff;border:none;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(0,120,215,0.07);">Download</button>
     </form>
   </div>
   <!-- Popup menu layout -->
@@ -333,8 +398,7 @@
     <button id="popupCloseBtn" class="popup-close-btn">OK</button>
   </div>
   <!-- Scripts -->
-  <script src="src/2Dpack.js" id="packScript"></script>
-  <script src="src/jszip.js"></script>
+  <script src="lib/jszip.js"></script>
   <script src="src/background.js"></script>
   <script src="src/totem.js"></script>
   <script src="src/i18n.js"></script>
@@ -342,7 +406,9 @@
   <script src="src/cropper.js"></script>
   <script src="src/preview.js"></script>
   <script src="src/switch.js"></script>
-  <script src="src/uuid.js"></script>
+  <script src="src/pack.js"></script>
+  <script src="src/2Dpack.js"></script>
+  <script src="src/3Dpack.js"></script>
   <script src="src/popup.js"></script>
 </body>
 </html>

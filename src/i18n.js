@@ -16,7 +16,11 @@ const translations = {
     foldMetaHide: "Hide Pack Info ▲",
     mode2D: "2D Image",
     mode3D: "3D Player Skin",
-    skinSizeError: "Skin image must be 128x128 or 64x64 pixels. Please re-upload."
+    skinSizeError: "Skin image must be 128x128 or 64x64 pixels. Please re-upload.",
+    armType: "Arm Type",
+    armTypeNormal: "Normal",
+    armTypeSlim: "Slim",
+    noTotemImage: "No image uploaded."
   },
   zh: {
     langBtn: "English",
@@ -34,7 +38,11 @@ const translations = {
     foldMetaHide: "隐藏材质包信息 ▲",
     mode2D: "2D图片",
     mode3D: "3D玩家皮肤",
-    skinSizeError: "皮肤图片必须为128x128或64x64像素，请重新上传。"
+    skinSizeError: "皮肤图片必须为128x128或64x64像素，请重新上传。",
+    armType: "手臂类型",
+    armTypeNormal: "普通",
+    armTypeSlim: "纤细",
+    noTotemImage: "未上传贴图。"
   }
 };
 
@@ -67,6 +75,13 @@ function setLang(lang) {
   if (skinLabel) skinLabel.textContent = t.skinImage;
   document.querySelector('input[type="submit"]').value = t.download;
   document.getElementById('langSwitcher').textContent = t.langBtn;
+  // Arm type switch translation
+  const armTypeLabel = document.getElementById('armTypeLabel');
+  const armTypeNormalLabel = document.getElementById('armTypeNormalLabel');
+  const armTypeSlimLabel = document.getElementById('armTypeSlimLabel');
+  if (armTypeLabel) armTypeLabel.textContent = t.armType;
+  if (armTypeNormalLabel) armTypeNormalLabel.textContent = t.armTypeNormal;
+  if (armTypeSlimLabel) armTypeSlimLabel.textContent = t.armTypeSlim;
   // Update fold button text
   const foldBtn = document.getElementById('foldMetaBtn');
   if (foldBtn) {
