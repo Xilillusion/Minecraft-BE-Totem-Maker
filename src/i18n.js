@@ -71,24 +71,35 @@ function setLang(lang) {
   document.querySelectorAll('.section-label')[0].textContent = t.packIcon;
   document.querySelectorAll('.section-label')[1].textContent = t.totemImage;
   // Add for skin label (3D mode)
-  document.getElementById('skinLabel')?.textContent = t.skinImage;
+  const skinLabel = document.getElementById('skinLabel');
+  if (skinLabel) skinLabel.textContent = t.skinImage;
   document.querySelector('input[type="submit"]').value = t.download;
   document.getElementById('langSwitcher').textContent = t.langBtn;
   // Set 3D download button text
   const downloadBtn3D = document.getElementById('downloadBtn3D');
   if (downloadBtn3D) downloadBtn3D.textContent = t.download;
   // Arm type switch translation
-  document.getElementById('armTypeLabel')?.textContent = t.armType;
-  document.getElementById('armTypeNormalLabel')?.textContent = t.armTypeNormal;
-  document.getElementById('armTypeSlimLabel')?.textContent = t.armTypeSlim;
+  const armTypeLabel = document.getElementById('armTypeLabel');
+  const armTypeNormalLabel = document.getElementById('armTypeNormalLabel');
+  const armTypeSlimLabel = document.getElementById('armTypeSlimLabel');
+  if (armTypeLabel) armTypeLabel.textContent = t.armType;
+  if (armTypeNormalLabel) armTypeNormalLabel.textContent = t.armTypeNormal;
+  if (armTypeSlimLabel) armTypeSlimLabel.textContent = t.armTypeSlim;
   // Update fold button text
   const foldBtn = document.getElementById('foldMetaBtn');
-  if (foldBtn) foldBtn.textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
+  if (foldBtn) {
+    // Use global folded state
+    foldBtn.textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
+  }
   // Update all crop buttons if present
-  document.querySelectorAll('button[id^="cropBtn"]').forEach(btn => btn.textContent = t.confirm);
+  document.querySelectorAll('button[id^="cropBtn"]').forEach(btn => {
+    btn.textContent = t.confirm;
+  });
   // Update mode switch buttons
-  document.getElementById('mode2D')?.textContent = t.mode2D;
-  document.getElementById('mode3D')?.textContent = t.mode3D;
+  const mode2DBtn = document.getElementById('mode2D');
+  const mode3DBtn = document.getElementById('mode3D');
+  if (mode2DBtn) mode2DBtn.textContent = t.mode2D;
+  if (mode3DBtn) mode3DBtn.textContent = t.mode3D;
 }
 
 document.getElementById('langSwitcher').addEventListener('click', function() {
