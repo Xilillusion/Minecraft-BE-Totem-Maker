@@ -24,14 +24,18 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 
 ## Introduction
 ```plaintext
-index.html
-src\
+├── index.html
+├── src\
+│   ├── 2Dpack.js      Image to totem texture pack
+│   ├── 3Dpack.js      Player skin to totem texture pack
 │   ├── background.js  Background images display
 │   ├── cropper.js     Cropper tool and its related functionalities
 │   ├── fold.js        Function to hide and show the pack info
 │   ├── i18n.js        English and Chineses Translation
-│   ├── mcpack.js      Pack the images and info into .mcpack file
+│   ├── pack.js        Utility tools for 2Dpack and 3Dpack
+│   ├── popup.js       Popup menu helper
 │   ├── preview.js     Preview of the uploaded images
+│   ├── switch.js      Switch between 2D and 3D modes
 │   └── totem.js       Animation of the big totem in the background
 └── img                Background images
 ```
