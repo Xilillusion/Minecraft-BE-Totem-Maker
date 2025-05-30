@@ -11,7 +11,6 @@ const translations = {
     skinImage: "Skin Image (Required, 64x64, 128x128 in schedule):",
     packIcon: "Pack Icon:",
     download: "Download",
-    download3D: "Download", // 3D mode download button
     confirm: "Crop",
     foldMetaShow: "Show Pack Info ▼",
     foldMetaHide: "Hide Pack Info ▲",
@@ -34,7 +33,6 @@ const translations = {
     skinImage: "玩家皮肤（必填，64x64，128x128尚未完成）：",
     packIcon: "材质包图标：",
     download: "下载",
-    download3D: "下载", // 3D mode download button
     confirm: "裁剪",
     foldMetaShow: "显示材质包信息 ▼",
     foldMetaHide: "隐藏材质包信息 ▲",
@@ -73,35 +71,24 @@ function setLang(lang) {
   document.querySelectorAll('.section-label')[0].textContent = t.packIcon;
   document.querySelectorAll('.section-label')[1].textContent = t.totemImage;
   // Add for skin label (3D mode)
-  const skinLabel = document.getElementById('skinLabel');
-  if (skinLabel) skinLabel.textContent = t.skinImage;
+  document.getElementById('skinLabel')?.textContent = t.skinImage;
   document.querySelector('input[type="submit"]').value = t.download;
   document.getElementById('langSwitcher').textContent = t.langBtn;
   // Set 3D download button text
   const downloadBtn3D = document.getElementById('downloadBtn3D');
   if (downloadBtn3D) downloadBtn3D.textContent = t.download;
   // Arm type switch translation
-  const armTypeLabel = document.getElementById('armTypeLabel');
-  const armTypeNormalLabel = document.getElementById('armTypeNormalLabel');
-  const armTypeSlimLabel = document.getElementById('armTypeSlimLabel');
-  if (armTypeLabel) armTypeLabel.textContent = t.armType;
-  if (armTypeNormalLabel) armTypeNormalLabel.textContent = t.armTypeNormal;
-  if (armTypeSlimLabel) armTypeSlimLabel.textContent = t.armTypeSlim;
+  document.getElementById('armTypeLabel')?.textContent = t.armType;
+  document.getElementById('armTypeNormalLabel')?.textContent = t.armTypeNormal;
+  document.getElementById('armTypeSlimLabel')?.textContent = t.armTypeSlim;
   // Update fold button text
   const foldBtn = document.getElementById('foldMetaBtn');
-  if (foldBtn) {
-    // Use global folded state
-    foldBtn.textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
-  }
+  if (foldBtn) foldBtn.textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
   // Update all crop buttons if present
-  document.querySelectorAll('button[id^="cropBtn"]').forEach(btn => {
-    btn.textContent = t.confirm;
-  });
+  document.querySelectorAll('button[id^="cropBtn"]').forEach(btn => btn.textContent = t.confirm);
   // Update mode switch buttons
-  const mode2DBtn = document.getElementById('mode2D');
-  const mode3DBtn = document.getElementById('mode3D');
-  if (mode2DBtn) mode2DBtn.textContent = t.mode2D;
-  if (mode3DBtn) mode3DBtn.textContent = t.mode3D;
+  document.getElementById('mode2D')?.textContent = t.mode2D;
+  document.getElementById('mode3D')?.textContent = t.mode3D;
 }
 
 document.getElementById('langSwitcher').addEventListener('click', function() {
