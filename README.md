@@ -33,9 +33,9 @@ src\
 │   ├── mcpack.js      Pack the images and info into .mcpack file
 │   ├── preview.js     Preview of the uploaded images
 │   └── totem.js       Animation of the big totem in the background
-├── img                Background images
-└── old                Abandoned scripts
+└── img                Background images
 ```
 
 ## Reference
-- JSZip: http://stuartk.com/jszip 
+- JSZip: http://stuartk.com/jszip
+- 3D Totem Generator by Asaki Yuki: https://github.com/AsakiYuki/3d-totem-generator 
