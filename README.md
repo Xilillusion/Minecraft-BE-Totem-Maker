@@ -42,4 +42,4 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 
 ## Reference
 - JSZip: http://stuartk.com/jszip
-- 3D Totem Generator by Asaki Yuki: https://github.com/AsakiYuki/3d-totem-generator 
+- 3D Totem Generator by Asaki Yuki: https://github.com/AsakiYuki/3d-totem-generator (for reverse engineering; the src is very smelly)
