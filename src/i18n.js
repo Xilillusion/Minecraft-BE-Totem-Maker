@@ -51,8 +51,9 @@ function setLang(lang) {
   currentLang = lang;
   window.currentLang = lang; // Ensure global currentLang is updated
   const t = translations[lang] || translations.en;
+
+  // --- Static labels ---
   document.querySelector('h1').innerHTML = t.title;
-  // Update subtitle with GitHub icon/link
   document.querySelector('.subtitle').innerHTML =
     `${t.madeBy} <a href="https://github.com/Xilillusion/Minecraft-BE-Totem-Maker" target="_blank" style="color:inherit;text-decoration:underline;"><b>Xilillusion</b></a>` +
     `<a href="https://github.com/Xilillusion" target="_blank" style="vertical-align:text-bottom;margin-left:4px;display:inline-block;">` +
@@ -66,40 +67,35 @@ function setLang(lang) {
       1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>` +
     `</svg></a>`;
   document.querySelector('.subtitle.secondary').textContent = t.uploadTip;
+  document.getElementById('langSwitcher').textContent = t.langBtn;
+
+  // --- Pack info labels ---
+  // Update fold button text
+  document.getElementById('foldMetaBtn').textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
+  // Update pack info labels if not folded
   document.querySelector('label[for="packName"]').textContent = t.packName;
   document.querySelector('label[for="packDescription"]').textContent = t.packDescription;
   document.querySelectorAll('.section-label')[0].textContent = t.packIcon;
-  document.querySelectorAll('.section-label')[1].textContent = t.totemImage;
-  // Add for skin label (3D mode)
-  const skinLabel = document.getElementById('skinLabel');
-  if (skinLabel) skinLabel.textContent = t.skinImage;
+
+  // --- Mode switch buttons ---
+  document.getElementById('mode2D').textContent = t.mode2D;
+  document.getElementById('mode3D').textContent = t.mode3D;
+
+  // --- 2D mode labels ---
   document.querySelector('input[type="submit"]').value = t.download;
-  document.getElementById('langSwitcher').textContent = t.langBtn;
-  // Set 3D download button text
-  const downloadBtn3D = document.getElementById('downloadBtn3D');
-  if (downloadBtn3D) downloadBtn3D.textContent = t.download;
-  // Arm type switch translation
-  const armTypeLabel = document.getElementById('armTypeLabel');
-  const armTypeNormalLabel = document.getElementById('armTypeNormalLabel');
-  const armTypeSlimLabel = document.getElementById('armTypeSlimLabel');
-  if (armTypeLabel) armTypeLabel.textContent = t.armType;
-  if (armTypeNormalLabel) armTypeNormalLabel.textContent = t.armTypeNormal;
-  if (armTypeSlimLabel) armTypeSlimLabel.textContent = t.armTypeSlim;
-  // Update fold button text
-  const foldBtn = document.getElementById('foldMetaBtn');
-  if (foldBtn) {
-    // Use global folded state
-    foldBtn.textContent = window.folded ? t.foldMetaShow : t.foldMetaHide;
-  }
-  // Update all crop buttons if present
+  document.querySelectorAll('.section-label')[1].textContent = t.totemImage;
+  // Crop buttons
   document.querySelectorAll('button[id^="cropBtn"]').forEach(btn => {
     btn.textContent = t.confirm;
   });
-  // Update mode switch buttons
-  const mode2DBtn = document.getElementById('mode2D');
-  const mode3DBtn = document.getElementById('mode3D');
-  if (mode2DBtn) mode2DBtn.textContent = t.mode2D;
-  if (mode3DBtn) mode3DBtn.textContent = t.mode3D;
+
+  // --- 3D mode labels ---
+  document.getElementById('downloadBtn3D').textContent = t.download;
+  document.getElementById('skinLabel').textContent = t.skinImage;
+  // Arm type switch labels
+  document.getElementById('armTypeLabel').textContent = t.armType;
+  document.getElementById('armTypeNormalLabel').textContent = t.armTypeNormal;
+  document.getElementById('armTypeSlimLabel').textContent = t.armTypeSlim;
 }
 
 document.getElementById('langSwitcher').addEventListener('click', function() {

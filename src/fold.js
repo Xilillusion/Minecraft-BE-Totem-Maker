@@ -6,9 +6,5 @@ document.addEventListener('DOMContentLoaded', function() {
   foldBtn.addEventListener('click', function() {
     window.folded = !window.folded;
     metaFields.style.display = window.folded ? 'none' : '';
-    // Always update button text via setLang to ensure correct language
-    if (typeof setLang === "function" && typeof currentLang !== "undefined") {
-      setLang(currentLang);
-    }
   });
 });
