@@ -10,7 +10,7 @@ async function handle2DPackSubmit(e) {
   // Prepare files for zip
   const zip = new JSZip();
 
-  // Totem image (required)
+  // Totem image
   const totemPngBlob = await getImagePngBlobFromInput('imageInput');
   if (!totemPngBlob) {
     showPopup("noTotemImage");
@@ -18,7 +18,7 @@ async function handle2DPackSubmit(e) {
   }
   zip.file("textures/items/totem.png", totemPngBlob);
 
-  // Icon (optional, fallback to totem if not provided)
+  // Icon
   const iconInput = document.getElementById('iconInput');
   let iconPngBlob = null;
   if (iconInput.files && iconInput.files[0]) {
@@ -48,9 +48,7 @@ async function handle2DPackSubmit(e) {
       }
     ],
     "metadata": {
-        "authors": [
-            "Xilillusion"
-        ],
+        "authors": ["Xilillusion"],
         "license": "GPL-3.0",
         "url": "https://github.com/Xilillusion/Minecraft-BE-Totem-Maker.git"
     }
@@ -73,11 +71,3 @@ async function handle2DPackSubmit(e) {
 
 // Expose for dynamic use
 window.handle2DPackSubmit = handle2DPackSubmit;
-
-// Attach submit handler when script is loaded (2D mode)
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('uploadForm');
-  if (form) {
-    form.addEventListener('submit', handle2DPackSubmit);
-  }
-});

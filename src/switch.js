@@ -22,8 +22,17 @@ function setMode(mode) {
     if (downloadBtn3D) downloadBtn3D.style.display = 'none';
   }
 
-  // Save mode for i18n
-  window.currentMode = mode;
+  // Attach/detach submit handlers based on mode
+  const form = document.getElementById('uploadForm');
+  if (form) {
+    form.removeEventListener('submit', window.handle2DPackSubmit);
+    form.removeEventListener('submit', window.handle3DPackSubmit);
+    if (mode === '2D') {
+      form.addEventListener('submit', window.handle2DPackSubmit);
+    } else if (mode === '3D') {
+      form.addEventListener('submit', window.handle3DPackSubmit);
+    }
+  }
 }
 
 // Default: 2D mode
