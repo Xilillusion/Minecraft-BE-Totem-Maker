@@ -28,13 +28,6 @@ async function handle3DPackSubmit(e) {
         "version": [1, 0, 0]
       }
     ],
-    "subpacks": [
-        {
-            "folder_name": "xili",
-            "name": packName + " - Player Head",
-            "memory_tier": 1
-        }
-    ],
     "metadata": {
         "authors": ["Xilillusion"],
         "license": "GPL-3.0",
