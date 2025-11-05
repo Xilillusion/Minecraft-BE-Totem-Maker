@@ -8,9 +8,10 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 
   <img src="https://github.com/user-attachments/assets/1d8567b0-83ba-420d-bf02-86c9a3598e7d" alt="ScreenShot" width="500"/>
 
-- **It is just a web:** Just run the Python server and open your browser. Also able to put this on your website
+- **Just a web:** Just run the Python server and open your browser. Also able to put this on your website
+- **Compatible:** Each pack has its own UUID --multiple packages can be installed.
 - **User-friendly:** Intuitive interface with a simple cropping tool.
-- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? We handle these for you.
+- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? We will handle these with you.
 
 ## Usage
 
@@ -40,6 +41,6 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 └── img                Background images
 ```
 
-## Reference
+## References
 - JSZip: http://stuartk.com/jszip
-- 3D Totem Generator by Asaki Yuki: https://github.com/AsakiYuki/3d-totem-generator (for reverse engineering; the source code is very smelly)
+- 3D Totem Generator by Asaki Yuki: https://github.com/AsakiYuki/3d-totem-generator (reverse engineering; the original code is very smelly)
