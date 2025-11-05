@@ -6,7 +6,7 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 ## Advantages
 - **支持中文：** 自动识别+右上角切换中英文 (虽然感觉没有中文应该也能看得懂)
 
-  <img src="https://github.com/user-attachments/assets/1d8567b0-83ba-420d-bf02-86c9a3598e7d" alt="ScreenShot" width="500"/>
+  <img src="https://github.com/user-attachments/assets/eeec3ac7-4db4-496c-bfc5-5a38d0da93e5" alt="ScreenShot" width="500"/>
 
 - **Just a web:** Just run the Python server and open your browser. Also able to put this on your website
 - **Compatible:** Each pack has its own UUID --multiple packages can be installed.
