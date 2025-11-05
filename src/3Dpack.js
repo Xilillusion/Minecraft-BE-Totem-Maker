@@ -105,171 +105,16 @@ async function handle3DPackSubmit(e) {
   zip.file("attachables/totem.json", JSON.stringify(attachables, null, 1));
 
   // ./models/entity/
-  let totem_right = {
-    "format_version": "1.12.0",
-    "minecraft:geometry": [
-      {
-        "description": {
-          "identifier": `geometry.totem_right_${armType}_${imageSize}`,
-          "texture_width": imageSize,
-          "texture_height": imageSize,
-          "visible_bounds_width": armType === "norm" ? 3 : 2,
-          "visible_bounds_height": 3.5,
-          "visible_bounds_offset": [ 0, 1.25, 0 ]
-        },
-        "bones": [
-          {
-            "name": "rightitem",
-            "pivot": [ 0, 15, 0 ]
-          }, {
-            "name": "totem_head",
-            "parent": "rightitem",
-            "pivot": [ 0, 24, 0 ],
-            "cubes": [
-              {
-                "origin": [ -4, 24, -4 ],
-                "size": [ 8, 8, 8 ],
-                "uv": [ 0, 0 ]
-              }, {
-                "origin": [ -4, 24, -4 ],
-                "size": [ 8, 8, 8 ],
-                "inflate": 0.5,
-                "uv": [ 32, 0 ]
-              }
-            ]
-          }, {
-            "name": "totem_body",
-            "parent": "rightitem",
-            "pivot": [ 0, -2, 0 ],
-            "cubes": [
-              {
-                "origin": [ -4, 12, -2 ],
-                "size": [ 8, 12, 4 ],
-                "uv": [ 16, 16 ]
-              }, {
-                "origin": [ -4, 12, -2 ],
-                "size": [ 8, 12, 4 ],
-                "inflate": 0.5,
-                "uv": [ 16, 32 ]
-              }
-            ]
-          }, {
-            "name": "totem_left_foot",
-            "parent": "rightitem",
-            "pivot": [ 0, -2, 0 ],
-            "cubes": [
-              {
-                "origin": [ 0, 0, -2 ],
-                "size": [ 4, 12, 4 ],
-                "uv": [ 16, 48 ]
-              }, {
-                "origin": [ 0, 0, -2 ],
-                "size": [ 4, 12, 4 ],
-                "inflate": 0.5,
-                "uv": [ 0, 48 ]
-              }
-            ]
-          }, {
-            "name": "totem_right_foot",
-            "parent": "rightitem",
-            "pivot": [ 0, -2, 0 ],
-            "cubes": [
-              {
-                "origin": [ -4, 0, -2 ],
-                "size": [ 4, 12, 4 ],
-                "uv": [ 0, 16 ]
-              }, {
-                "origin": [ -4, 0, -2 ],
-                "size": [ 4, 12, 4 ],
-                "inflate": 0.5,
-                "uv": [ 0, 32 ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
+  const geoData = {
+    "norm64": { "format_version": "1.12.0", "minecraft:geometry": [ { "description": { "identifier": "geometry.totem_right_norm_64", "texture_width": 64, "texture_height": 64, "visible_bounds_width": 3, "visible_bounds_height": 3.5, "visible_bounds_offset": [ 0, 1.25, 0 ] }, "bones": [ { "name": "rightitem", "pivot": [ 0, 15, 0 ] }, { "name": "totem_head", "parent": "rightitem", "pivot": [ 0, 24, 0 ], "cubes": [ { "origin": [ -4, 24, -4 ], "size": [ 8, 8, 8 ], "uv": [ 0, 0 ] }, { "origin": [ -4, 24, -4 ], "size": [ 8, 8, 8 ], "inflate": 0.5, "uv": [ 32, 0 ] } ] }, { "name": "totem_body", "parent": "rightitem", "pivot": [ 0, -2, 0 ], "cubes": [ { "origin": [ -4, 12, -2 ], "size": [ 8, 12, 4 ], "uv": [ 16, 16 ] }, { "origin": [ -4, 12, -2 ], "size": [ 8, 12, 4 ], "inflate": 0.5, "uv": [ 16, 32 ] } ] }, { "name": "totem_left_foot", "parent": "rightitem", "pivot": [ 0, -2, 0 ], "cubes": [ { "origin": [ 0, 0, -2 ], "size": [ 4, 12, 4 ], "uv": [ 16, 48 ] }, { "origin": [ 0, 0, -2 ], "size": [ 4, 12, 4 ], "inflate": 0.5, "uv": [ 0, 48 ] } ] }, { "name": "totem_right_foot", "parent": "rightitem", "pivot": [ 0, -2, 0 ], "cubes": [ { "origin": [ -4, 0, -2 ], "size": [ 4, 12, 4 ], "uv": [ 0, 16 ] }, { "origin": [ -4, 0, -2 ], "size": [ 4, 12, 4 ], "inflate": 0.5, "uv": [ 0, 32 ] } ] }, { "name": "totem_right_hand", "parent": "rightitem", "pivot": [ 0, 5, 0 ], "cubes": [ { "origin": [ -8, 12, -2 ], "size": [ 4, 12, 4 ], "uv": [ 40, 16 ] }, { "origin": [ 4, 12, -2 ], "size": [ 4, 12, 4 ], "inflate": 0.5, "uv": [ 48, 48 ] } ] }, { "name": "totem_left_hand", "parent": "rightitem", "pivot": [ -1, 6, -1 ], "cubes": [ { "origin": [ 4, 12, -2 ], "size": [ 4, 12, 4 ], "uv": [ 32, 48 ] }, { "origin": [ -8, 12, -2 ], "size": [ 4, 12, 4 ], "inflate": 0.5, "uv": [ 40, 32 ] } ] } ] } ] },
+    "norm128": { "format_version": "1.12.0", "minecraft:geometry": [ { "description": { "identifier": "geometry.totem_right_norm_128", "texture_width": 128, "texture_height": 128, "visible_bounds_width": 3, "visible_bounds_height": 3.5, "visible_bounds_offset": [ 0, 1.25, 0 ] }, "bones": [ { "name": "rightitem", "pivot": [ 0, 30, 0 ] }, { "name": "totem_head", "parent": "rightitem", "pivot": [ 0, 48, 0 ], "cubes": [ { "origin": [ -8, 48, -8 ], "size": [ 16, 16, 16 ], "uv": [ 0, 0 ] }, { "origin": [ -8, 48, -8 ], "size": [ 16, 16, 16 ], "inflate": 0.5, "uv": [ 64, 0 ] } ] }, { "name": "totem_body", "parent": "rightitem", "pivot": [ 0, -4, 0 ], "cubes": [ { "origin": [ -8, 24, -4 ], "size": [ 16, 24, 8 ], "uv": [ 32, 32 ] }, { "origin": [ -8, 24, -4 ], "size": [ 16, 24, 8 ], "inflate": 0.5, "uv": [ 32, 64 ] } ] }, { "name": "totem_left_foot", "parent": "rightitem", "pivot": [ 0, -4, 0 ], "cubes": [ { "origin": [ 0, 0, -4 ], "size": [ 8, 24, 8 ], "uv": [ 32, 96 ] }, { "origin": [ 0, 0, -4 ], "size": [ 8, 24, 8 ], "inflate": 0.5, "uv": [ 0, 96 ] } ] }, { "name": "totem_right_foot", "parent": "rightitem", "pivot": [ 0, -4, 0 ], "cubes": [ { "origin": [ -8, 0, -4 ], "size": [ 8, 24, 8 ], "uv": [ 0, 32 ] }, { "origin": [ -8, 0, -4 ], "size": [ 8, 24, 8 ], "inflate": 0.5, "uv": [ 0, 64 ] } ] }, { "name": "totem_right_hand", "parent": "rightitem", "pivot": [ 0, 10, 0 ], "cubes": [ { "origin": [ -16, 24, -4 ], "size": [ 8, 24, 8 ], "uv": [ 80, 32 ] }, { "origin": [ 8, 24, -4 ], "size": [ 8, 24, 8 ], "inflate": 0.5, "uv": [ 96, 96 ] } ] }, { "name": "totem_left_hand", "parent": "rightitem", "pivot": [ -2, 12, -2 ], "cubes": [ { "origin": [ 8, 24, -4 ], "size": [ 8, 24, 8 ], "uv": [ 64, 96 ] }, { "origin": [ -14, 24, -4 ], "size": [ 8, 24, 8 ], "inflate": 0.5, "uv": [ 80, 64 ] } ] } ] } ] },
+    "slim64": { "format_version": "1.12.0", "minecraft:geometry": [ { "description": { "identifier": "geometry.totem_right_slim_64", "texture_width": 64, "texture_height": 64, "visible_bounds_width": 3, "visible_bounds_height": 3.5, "visible_bounds_offset": [ 0, 1.25, 0 ] }, "bones": [ { "name": "rightitem", "pivot": [ 0, 15, 0 ] }, { "name": "totem_head", "parent": "rightitem", "pivot": [ 0, 24, 0 ], "cubes": [ { "origin": [ -4, 24, -4 ], "size": [ 8, 8, 8 ], "uv": [ 0, 0 ] }, { "origin": [ -4, 24, -4 ], "size": [ 8, 8, 8 ], "inflate": 0.5, "uv": [ 32, 0 ] } ] }, { "name": "totem_body", "parent": "rightitem", "pivot": [ 0, -2, 0 ], "cubes": [ { "origin": [ -4, 12, -2 ], "size": [ 8, 12, 4 ], "uv": [ 16, 16 ] }, { "origin": [ -4, 12, -2 ], "size": [ 8, 12, 4 ], "inflate": 0.5, "uv": [ 16, 32 ] } ] }, { "name": "totem_left_foot", "parent": "rightitem", "pivot": [ 0, -2, 0 ], "cubes": [ { "origin": [ 0, 0, -2 ], "size": [ 4, 12, 4 ], "uv": [ 16, 48 ] }, { "origin": [ 0, 0, -2 ], "size": [ 4, 12, 4 ], "inflate": 0.5, "uv": [ 0, 48 ] } ] }, { "name": "totem_right_foot", "parent": "rightitem", "pivot": [ 0, -2, 0 ], "cubes": [ { "origin": [ -4, 0, -2 ], "size": [ 4, 12, 4 ], "uv": [ 0, 16 ] }, { "origin": [ -4, 0, -2 ], "size": [ 4, 12, 4 ], "inflate": 0.5, "uv": [ 0, 32 ] } ] }, { "name": "totem_right_hand", "parent": "rightitem", "pivot": [ 0, 5, 0 ], "cubes": [ { "origin": [ -7, 12, -2 ], "size": [ 3, 12, 4 ], "uv": [ 40, 16 ] }, { "origin": [ 4, 12, -2 ], "size": [ 3, 12, 4 ], "inflate": 0.5, "uv": [ 48, 48 ] } ] }, { "name": "totem_left_hand", "parent": "rightitem", "pivot": [ -1, 6, -1 ], "cubes": [ { "origin": [ 4, 12, -2 ], "size": [ 3, 12, 4 ], "uv": [ 32, 48 ] }, { "origin": [ -7, 12, -2 ], "size": [ 3, 12, 4 ], "inflate": 0.5, "uv": [ 40, 32 ] } ] } ] } ] },
+    "slim128": { "format_version": "1.12.0", "minecraft:geometry": [ { "description": { "identifier": "geometry.totem_right_slim_128", "texture_width": 128, "texture_height": 128, "visible_bounds_width": 3, "visible_bounds_height": 3.5, "visible_bounds_offset": [ 0, 1.25, 0 ] }, "bones": [ { "name": "rightitem", "pivot": [ 0, 30, 0 ] }, { "name": "totem_head", "parent": "rightitem", "pivot": [ 0, 48, 0 ], "cubes": [ { "origin": [ -8, 48, -8 ], "size": [ 16, 16, 16 ], "uv": [ 0, 0 ] }, { "origin": [ -8, 48, -8 ], "size": [ 16, 16, 16 ], "inflate": 0.5, "uv": [ 64, 0 ] } ] }, { "name": "totem_body", "parent": "rightitem", "pivot": [ 0, -4, 0 ], "cubes": [ { "origin": [ -8, 24, -4 ], "size": [ 16, 24, 8 ], "uv": [ 32, 32 ] }, { "origin": [ -8, 24, -4 ], "size": [ 16, 24, 8 ], "inflate": 0.5, "uv": [ 32, 64 ] } ] }, { "name": "totem_left_foot", "parent": "rightitem", "pivot": [ 0, -4, 0 ], "cubes": [ { "origin": [ 0, 0, -4 ], "size": [ 8, 24, 8 ], "uv": [ 32, 96 ] }, { "origin": [ 0, 0, -4 ], "size": [ 8, 24, 8 ], "inflate": 0.5, "uv": [ 0, 96 ] } ] }, { "name": "totem_right_foot", "parent": "rightitem", "pivot": [ 0, -4, 0 ], "cubes": [ { "origin": [ -8, 0, -4 ], "size": [ 8, 24, 8 ], "uv": [ 0, 32 ] }, { "origin": [ -8, 0, -4 ], "size": [ 8, 24, 8 ], "inflate": 0.5, "uv": [ 0, 64 ] } ] }, { "name": "totem_right_hand", "parent": "rightitem", "pivot": [ 0, 10, 0 ], "cubes": [ { "origin": [ -14, 24, -4 ], "size": [ 6, 24, 8 ], "uv": [ 80, 32 ] }, { "origin": [ 8, 24, -4 ], "size": [ 6, 24, 8 ], "inflate": 0.5, "uv": [ 96, 96 ] } ] }, { "name": "totem_left_hand", "parent": "rightitem", "pivot": [ -2, 12, -2 ], "cubes": [ { "origin": [ 8, 24, -4 ], "size": [ 6, 24, 8 ], "uv": [ 64, 96 ] }, { "origin": [ -14, 24, -4 ], "size": [ 6, 24, 8 ], "inflate": 0.5, "uv": [ 80, 64 ] } ] } ] } ] }
   }
-
-  let hand_geo;
-  if (armType === "norm") {
-    hand_geo = [
-      {
-        "name": "totem_right_hand",
-        "parent": "rightitem",
-        "pivot": [ 0, 5, 0 ],
-        "cubes": [
-          {
-            "origin": [ -8, 12, -2 ],
-            "size": [ 4, 12, 4 ],
-            "uv": [ 40, 16 ]
-          }, {
-            "origin": [ 4, 12, -2 ],
-            "size": [ 4, 12, 4 ],
-            "inflate": 0.5,
-            "uv": [ 48, 48 ]
-          }
-        ]
-      }, {
-        "name": "totem_left_hand",
-        "parent": "rightitem",
-        "pivot": [ -1, 6, -1 ],
-        "cubes": [
-          {
-            "origin": [ 4, 12, -2 ],
-            "size": [ 4, 12, 4 ],
-            "uv": [ 32, 48 ]
-          }, {
-            "origin": [ -8, 12, -2 ],
-            "size": [ 4, 12, 4 ],
-            "inflate": 0.5,
-            "uv": [ 40, 32 ]
-          }
-        ]
-      }
-    ];
-  } else {
-    hand_geo = [
-      {
-        "name": "totem_right_hand",
-        "parent": "rightitem",
-        "pivot": [ 0, 5, 0 ],
-        "cubes": [
-          {
-            "origin": [ -7, 12, -2 ],
-            "size": [ 3, 12, 4 ],
-            "uv": [ 40, 16 ]
-          }, {
-            "origin": [ 4, 12, -2 ],
-            "size": [ 3, 12, 4 ],
-            "inflate": 0.5,
-            "uv": [ 48, 48 ]
-          }
-        ]
-      }, {
-        "name": "totem_left_hand",
-        "parent": "rightitem",
-        "pivot": [ -1, 6, -1 ],
-        "cubes": [
-          {
-            "origin": [ 4, 12, -2 ],
-            "size": [ 3, 12, 4 ],
-            "uv": [ 32, 48 ]
-          }, {
-            "origin": [ -7, 12, -2 ],
-            "size": [ 3, 12, 4 ],
-            "inflate": 0.5,
-            "uv": [ 40, 32 ]
-          }
-        ]
-      }
-    ];
-  }
-  totem_right["minecraft:geometry"][0]["bones"].push(...hand_geo);
+  const totem_right = JSON.parse(JSON.stringify(geoData[`${armType}${imageSize}`]));
   zip.file(`models/entity/totem_right_${armType}_${imageSize}.geo.json`, JSON.stringify(totem_right, null, 1));
 
   let totem_left = JSON.parse(JSON.stringify(totem_right));
-
   // Replace "rightitem" with "leftitem" in all "bones"
   totem_left["minecraft:geometry"][0]["bones"] = totem_left["minecraft:geometry"][0]["bones"].map(bone => {
     if (bone["name"] === "rightitem") bone["name"] = "leftitem";
@@ -278,15 +123,15 @@ async function handle3DPackSubmit(e) {
   });
 
   // Replace identifier
-  totem_left["minecraft:geometry"][0]["description"]["identifier"] =
-    `geometry.totem_left_${armType}_${imageSize}`;
+  totem_left["minecraft:geometry"][0]["description"]["identifier"] = `geometry.totem_left_${armType}_${imageSize}`;
 
   zip.file(`models/entity/totem_left_${armType}_${imageSize}.geo.json`, JSON.stringify(totem_left, null, 1));
 
   // ./animations
-  const totem = {"format_version": "1.10.0", "animations": { "animation.totem.animation": { "loop": true, "bones": { "rightitem": { "position": [ 0.5, -3, -6 ], "rotation": [ 90, 0, 180 ], "scale": 0.4 }, "leftitem": { "position": [ -0.5, -3, -6 ], "rotation": [ 90, 0, 180 ], "scale": 0.4 } } } } };
+  const scaleFactor = 1 / (imageSize / 64);
+  const totem = {"format_version": "1.10.0", "animations": { "animation.totem.animation": { "loop": true, "bones": { "rightitem": { "position": [ 0.5, -3, -6 ], "rotation": [ 90, 0, 180 ], "scale": 0.4*scaleFactor }, "leftitem": { "position": [ -0.5, -3, -6 ], "rotation": [ 90, 0, 180 ], "scale": 0.4*scaleFactor } } } } };
   zip.file("animations/totem.json", JSON.stringify(totem, null, 1));
-  const totem_firstperson = {"format_version": "1.10.0", "animations": { "animation.totem.first_person": { "loop": true, "bones": { "rightitem": { "position": [ 6, -13, 17 ], "rotation": [ 28, -25, 200 ], "scale": 0.9 }, "leftitem": { "position": [ -100, -33, 93 ], "rotation": [ -5, -55, 2 ], "scale": 2.6 } } } } };
+  const totem_firstperson = {"format_version": "1.10.0", "animations": { "animation.totem.first_person": { "loop": true, "bones": { "rightitem": { "position": [ 6, -13, 17 ], "rotation": [ 28, -25, 200 ], "scale": 0.9*scaleFactor }, "leftitem": { "position": [ -100, -33, 93 ], "rotation": [ -5, -55, 2 ], "scale": 2.6*scaleFactor } } } } };
   zip.file("animations/totem_firstperson.json", JSON.stringify(totem_firstperson, null, 1));
 
   // ./render_controllers/
