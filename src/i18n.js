@@ -90,7 +90,7 @@ function setLang(lang) {
   });
 
   // --- 3D mode labels ---
-  document.getElementById('downloadBtn3D').textContent = t.download;
+  document.getElementById('downloadBtn3D').value = t.download;
   document.getElementById('skinLabel').textContent = t.skinImage;
   // Arm type switch labels
   document.getElementById('armTypeLabel').textContent = t.armType;
