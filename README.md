@@ -15,12 +15,12 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 ## Usage
 
 1. Visit https://xilillusion.github.io/Minecraft-BE-Totem-Maker/ (RECOMMENDED)
-   
-   OR
 
-   Download and run `index.html`
-2. Upload your image and (optionally) a pack icon.
-3. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
+   OR https://minecraft-be-totem-maker.pages.dev/ 
+   
+   OR Download and run `index.html`
+3. Upload your image and (optionally) a pack icon.
+4. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
 
 ## Introduction
 ```plaintext
