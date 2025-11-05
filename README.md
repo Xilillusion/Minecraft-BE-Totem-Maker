@@ -1,26 +1,26 @@
 # Minecraft BE Totem Generator
 A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying texture packs. Users can upload their own images and (optionally) enter pack information.
 
-<img src="https://github.com/user-attachments/assets/0a1680bb-7063-49eb-b661-2eda316420e9" alt="ScreenShot" width="800"/>
+  <img width="800" alt="ScreenShot" src="https://github.com/user-attachments/assets/498f8bb4-ebd5-419d-85b2-d0940e2cf417" />
 
 ## Advantages
 - **支持中文：** 自动识别+右上角切换中英文 (虽然感觉没有中文应该也能看得懂)
 
-  <img src="https://github.com/user-attachments/assets/1d8567b0-83ba-420d-bf02-86c9a3598e7d" alt="ScreenShot" width="500"/>
-
-- **It is just a web:** Just run the Python server and open your browser. Also able to put this on your website
+  <img width="500" alt="ScreenShot" src="https://github.com/user-attachments/assets/11144d35-0e3e-4df1-b483-f672714cea0c" />
+- **Just a web:** Just run the Python server and open your browser. Also able to put this on your website
+- **Compatible:** Each pack has its own UUID --multiple packages can be installed.
 - **User-friendly:** Intuitive interface with a simple cropping tool.
-- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? We handle these for you.
+- **Brainless:** Is your image in .png format? Does it have a size of 1 by 1? We will handle these with you.
 
 ## Usage
 
 1. Visit https://xilillusion.github.io/Minecraft-BE-Totem-Maker/ (RECOMMENDED)
-   
-   OR
 
-   Download and run `index.html`
-2. Upload your image and (optionally) a pack icon.
-3. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
+   OR https://minecraft-be-totem-maker.pages.dev/ 
+   
+   OR Download and run `index.html`
+3. Upload your image and (optionally) a pack icon.
+4. Download the generated `.mcpack` file and import it into Minecraft Bedrock Edition.
 
 ## Introduction
 ```plaintext
@@ -40,6 +40,6 @@ A simple web app to generate custom Minecraft Bedrock Edition Totem of Undying t
 └── img                Background images
 ```
 
-## Reference
+## References
 - JSZip: http://stuartk.com/jszip
-- 3D Totem Generator by Asaki Yuki: https://github.com/AsakiYuki/3d-totem-generator (for reverse engineering; the source code is very smelly)
+- 3D Totem Generator by Asaki Yuki: https://github.com/AsakiYuki/3d-totem-generator (reverse engineering; the original code is very smelly)
