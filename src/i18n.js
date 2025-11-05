@@ -26,7 +26,7 @@ const translations = {
     langBtn: "English",
     title: "自定义不死图腾<br>生成器",
     madeBy: "作者",
-    uploadTip: "上传图片/玩家皮肤和材质包信息（可选），生成基岩版不死图腾材质包。",
+    uploadTip: "上传图片/玩家皮肤（64x64或128x128）和材质包信息（可选），生成基岩版不死图腾材质包。",
     packName: "材质包名称：",
     packDescription: "材质包描述：",
     totemImage: "上传贴图（必填）：",
